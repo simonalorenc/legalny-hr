@@ -1,9 +1,11 @@
 @import "bootstrap/scss/bootstrap-grid";
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 body {
   margin: 0;
+  color: #2b2b2b;
 }
