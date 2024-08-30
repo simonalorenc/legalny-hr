@@ -62,7 +62,13 @@ body {
 
 @media (max-width: 1200px) {
   .font-sm {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 19px;
+  }
+
+  @media (max-width: 992px) {
+    .font-md {
+      font-size: 0.8rem;
+    }
   }
 }
