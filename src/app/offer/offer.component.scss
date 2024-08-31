@@ -1,0 +1,15 @@
+@use "../../styles/global" as global;
+
+.container-fluid {
+  background-color: global.$background-light;
+  color: global.$text-dark;
+}
+
+.title-large {
+  border-bottom: 0.5px solid global.$text-dark;
+  display: inline-block;
+}
+
+.offer-container {
+  padding: 3em 4.5em 0 4.5em;
+}
