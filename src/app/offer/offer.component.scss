@@ -1,38 +1,42 @@
-@use '../../styles/global' as global;
+@use "../../styles/global" as global;
+
+.container-fluid {
+  background-color: global.$background-light;
+}
 
 .offer-container {
-    padding: 3em 4.5em 0 4.5em;
-    color: global.$dark-text;
+  padding: 3em 4.5em 0 4.5em;
+  color: global.$dark-text;
 }
 
 .main-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-bottom: 0.5px solid global.$dark-text;
-    display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 0.5px solid global.$dark-text;
+  display: inline-block;
 }
 
 .line {
-    border-left: 0.5px solid global.$dark-text;
-    position: absolute;
-    height: 80%;
-    width: 0.5px;
-    top: 100vh;
-    left: 50%;
+  border-left: 0.5px solid global.$dark-text;
+  position: absolute;
+  height: 80%;
+  width: 0.5px;
+  top: 100vh;
+  left: 50%;
 }
 
 .offer-box {
-    padding-bottom: 20px;
-    font-size: 1.1rem;
+  padding-bottom: 20px;
+  font-size: 1.1rem;
 }
 
 .offer-box-title {
-    text-transform: uppercase;
-    font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .offer-text {
-    line-height: 25px;
-    font-weight: 300;
+  line-height: 25px;
+  font-weight: 300;
 }

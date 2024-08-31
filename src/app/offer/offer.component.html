@@ -1,82 +1,27 @@
-<div class="container">
-  <div class="row py-5">
-    <div class="col col-lg-6 col-12 offer-container">
-      <div class="main-title pb-1">Strefa pracodawcy</div>
-      <div class="offer-box pt-3">
-        <div class="offer-box-title">Tworzenie dokumentacji zatrudnieniowej</div>
-        <div class="offer-text">
-          Kompleksowe przygotowanie umów o pracę, umów cywilnoprawnych, regulaminów oraz polityk zgodnych z przepisami regulującymi zatrudnienie.
+<div class="container-fluid">
+  <div class="container">
+    <div class="row py-5">
+      <div class="col col-lg-6 col-12 offer-container">
+        <div class="main-title pb-1">Strefa pracodawcy</div>
+        <div>
+          @for (offer of employerOffers; track offer) {
+          <div class="offer-box pt-3">
+            <div class="offer-box-title">{{ offer.title }}</div>
+            <div class="offer-text">{{ offer.text }}</div>
+          </div>
+          }
         </div>
       </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Analiza dokumentacji</div>
-        <div class="offer-text">
-          Przegląd istniejących dokumentów w Twojej firmie pod kątem zgodności z przepisami, minimalizując ryzyko prawne.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Obsługa zakończenia stosunku zatrudnienia</div>
-        <div class="offer-text">
-          Sporządzanie pism związanych z wypowiedzeniem, rozwiązywaniem umów oraz doradztwo w sytuacjach trudnych związanych z zakończeniem współpracy.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Reprezentacja w sporach sądowych</div>
-        <div class="offer-text">
-          Profesjonalna obrona Twoich interesów przed sądami, w tym przygotowywanie strategii obrony procesowej.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Negocjacje i mediacje</div>
-        <div class="offer-text">
-          Prowadzenie rozmów i mediacji w przypadku konfliktów pracowniczych, dążąc do jak najszybszego ich rozwiązania.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Konsultacje i szkolenia hr</div>
-        <div class="offer-text">
-          Dedykowane konsultacje szkolenia dla działów HR, które zwiększą ich kompetencje w obszarze prawa pracy i zarządzania ryzykiem prawnym.
-        </div>
-      </div>
-    </div>
-    <div class="line d-none d-lg-block"></div>
-
-    <div class="col col-lg-6 col-12 offer-container">
-      <div class="main-title pb-1">Strefa pracownika</div>
-      <div class="offer-box pt-3">
-        <div class="offer-box-title">Weryfikacja umów zatrudnieniowych</div>
-        <div class="offer-text">
-          Sprawdzenie, czy Twoja umowa jest zgodna z obowiązującym prawem, chroni w odpowiedni sposób Twoje interesy oraz doradztwo w zakresie jej negocjacji.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Pomoc w sporach z pracodawcą</div>
-        <div class="offer-text">
-          Reprezentacja w konfliktach dotyczących zatrudnienia i egzekwowania twoich praw.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Doradztwo w zakresie zakończenia zatrudnienia</div>
-        <div class="offer-text">
-          Pomoc w negocjacjach przy zwolnieniach, przygotowanie pism oraz analiza propozycji ze strony pracodawcy.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Wsparcie w odzyskaniu nalenych świadczeń</div>
-        <div class="offer-text">
-          Doradztwo i reprezentacja w przypadku niewypłaconych wynagrodzeń, urlopów czy innych świadczeń.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Ochrona praw w trakcie zatrudnienia</div>
-        <div class="offer-text">
-          Monitorowanie Twoich praw w trakcie trwania zatrudnienia, abyś miał pewność, że są one przestrzegane.
-        </div>
-      </div>
-      <div class="offer-box">
-        <div class="offer-box-title">Przygotowanie do rozmów z pracodawcą</div>
-        <div class="offer-text">
-          Profesjonalne doradztwo przed rozmowami o podwyżkę, awans czy zmianę warunków pracy.
+      <div class="line d-none d-lg-block"></div>
+      <div class="col col-lg-6 col-12 offer-container">
+        <div class="main-title pb-1">Strefa pracownika</div>
+        <div>
+          @for (offer of employerOffers; track offer) {
+          <div class="offer-box pt-3">
+            <div class="offer-box-title">{{ offer.title }}</div>
+            <div class="offer-text">{{ offer.text }}</div>
+          </div>
+          }
         </div>
       </div>
     </div>
