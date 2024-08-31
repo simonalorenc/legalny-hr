@@ -21,6 +21,24 @@ body {
   text-transform: uppercase;
 }
 
+.title-large {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
 @media (max-width: 991.98px) {
   html {
     font-size: 14px;
