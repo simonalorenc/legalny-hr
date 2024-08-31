@@ -14,12 +14,18 @@ video {
 .logo-container-border {
   border: solid 0.5px white;
   border-bottom: none;
-  height: 90vh;
+  height: 85vh;
+  transform: translate(50%);
   z-index: 1;
+}
+
+.logo {
+    width: 45%;
 }
 
 @media (max-width: 991.98px) {
   .logo-container-border {
     height: 70vh;
+    transform: translate(0);
   }
 }
