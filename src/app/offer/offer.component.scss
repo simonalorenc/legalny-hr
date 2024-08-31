@@ -1,20 +1,20 @@
-@import "../../variables.scss";
+@use '../../styles/global' as global;
 
 .offer-container {
     padding: 3em 4.5em 0 4.5em;
-    color: $dark-text;
+    color: global.$dark-text;
 }
 
 .main-title {
     font-size: 40px;
     font-weight: 700;
     letter-spacing: -0.05em;
-    border-bottom: 0.5px solid $dark-text;
+    border-bottom: 0.5px solid #2b2b2b;
     display: inline-block;
 }
 
 .line {
-    border-left: 0.5px solid $dark-text;
+    border-left: 0.5px solid #2b2b2b;
     position: absolute;
     height: 80vh;
     width: 0.5px;
