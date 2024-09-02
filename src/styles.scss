@@ -3,6 +3,7 @@
 
 * {
   font-family: "Libre Franklin", sans-serif;
+  // outline: 1px solid red; 
 }
 
 html {
@@ -16,7 +17,7 @@ body {
 
 .title {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -29,8 +30,9 @@ body {
 
 .subtitle {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .caption {
@@ -39,20 +41,20 @@ body {
   font-weight: 300;
 }
 
-@media (max-width: 1198.98px) {
+@media (max-width: 1199.98px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 991.98px) {
   html {
     font-size: 14px;
   }
 }
 
-// @media (max-width: 991.98px) {
-//   html {
-//     font-size: 14px;
-//   }
-// }
-
 @media (max-width: 767.98px) {
   html {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
