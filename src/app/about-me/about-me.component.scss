@@ -1,4 +1,4 @@
-section {
+.container-fluid {
   background-color: black;
   color: white;
 }
@@ -12,30 +12,14 @@ section {
   }
 }
 
-.line-container {
-    width: 100%;
-}
-
 .line {
     border-top: white 0.5px solid;
     height: 0.5px;
     width: 80%;
 }
 
-.name {
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  line-height: 30px;
-}
-
-.title {
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  line-height: 20px;
-}
-
-.about-me {
-  font-weight: 300;
+.subtitle {
+  letter-spacing: 1px;
 }
 
 hr {
