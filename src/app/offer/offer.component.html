@@ -1,22 +1,22 @@
-<div class="container-fluid">
-  <div class="container">
-    <div class="row py-3">
+<div class="container-fluid g-0">
+  <div class="container g-0">
+    <div class="row py-5 g-0">
       <div class="col-lg-6 col-12 offer-container">
         <div class="title-large pb-1">Strefa pracodawcy</div>
         <div>
           @for (offer of employerOffers; track offer) {
-          <div class="py-3">
+          <div class="offer-item">
             <div class="subtitle">{{ offer.title }}</div>
             <div class="caption">{{ offer.text }}</div>
           </div>
           }
         </div>
       </div>
-      <div class="col-lg-6 col-12 offer-container">
+      <div class="col-lg-6 col-12 offer-container pt-5 pt-lg-0">
         <div class="title-large pb-1">Strefa pracownika</div>
         <div>
           @for (offer of employerOffers; track offer) {
-          <div class="py-3">
+          <div class="offer-item">
             <div class="subtitle">{{ offer.title }}</div>
             <div class="caption">{{ offer.text }}</div>
           </div>
