@@ -1,18 +1,17 @@
-<div class="container-fluid">
-  <div class="container">
-    <div class="row py-4 d-flex justify-content-between px-5">
+<div class="container-fluid g-0">
+  <div class="container g-0">
+    <div class="row g-0 py-5 d-flex justify-content-between px-5">
       <div class="col-12 col-lg-4">
-        <div class="title-large py-5">Współpraca</div>
+        <div class="title-large pb-5">Współpraca</div>
         <div class="caption">
-          Niezależnie od tego, czy potrzebujesz konsultacji prawnej, analizy dokumentacji, czy reprezentacji w sporze sądowym - jesteśmy tu, aby zadbać o Twoje interesy.
-          <hr />
+          Niezależnie od tego, czy potrzebujesz konsultacji prawnej, analizy dokumentacji, czy reprezentacji w sporze sądowym - jesteśmy tu, aby zadbać o Twoje interesy. <br><br>
           Z naszym wsparciem możesz skoncentrować się na tym, co najważniejsze - rozwijaniu swojego biznesu lub kariery.  Pozwól, abyśmy przejęli na siebie kwestie prawne, a Ty ciesz się spokojem i pewnością, że wszystko jest pod kontrolą.
         </div>
       </div>
-      <div class="col-12 col-lg-7 pt-5">
+      <div class="col-12 col-lg-7 pt-5 pt-lg-0">
         @for (cooperationItem of cooperationItems; track cooperationItem) {
-            <div class="row py-3">
-                <div class="col-2 pe-5">
+            <div class="row cooperation-item">
+                <div class="col-2 pe-4 pe-lg-4 pe-md-5">
                     <img src="{{ cooperationItem.image }}" alt="cooperation-item">
                 </div>
                 <div class="col-10">
