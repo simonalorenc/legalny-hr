@@ -11,12 +11,12 @@
       <div class="col-12 col-lg-7 pt-5 pt-lg-0">
         @for (cooperationItem of cooperationItems; track cooperationItem) {
             <div class="row cooperation-item">
-                <div class="col-2 pe-4 pe-lg-4 pe-md-5">
-                    <img src="{{ cooperationItem.image }}" alt="cooperation-item">
+                <div class="col-2">
+                    <img src="{{ cooperationItem.image }}" class="cooperation-image" alt="cooperation-item">
                 </div>
                 <div class="col-10">
                     <div class="subtitle">{{ cooperationItem.title }}</div>
-                    <div class="caption italic">{{ cooperationItem.description }}</div>
+                    <div class="caption italic py-1">{{ cooperationItem.description }}</div>
                     <div class="caption">{{ cooperationItem.text }}</div>
                 </div>
             </div>
