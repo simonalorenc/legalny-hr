@@ -1,0 +1,28 @@
+{
+    "cooperation": [
+        {
+            "image": "cooperation/consultation.svg",
+            "title": "Konsultacja wstępna",
+            "description": "Zrozumienie Twoich potrzeb",
+            "text": "Podczas pierwszej konsultacji analizuję Twoje potrzeby i problemy związane z zatrudnieniem. Określam zakres niezbędnych działań i ustalamy wspólną strategię."
+        }, 
+        {
+            "image": "cooperation/analysis.svg",
+            "title": "Analiza prawna",
+            "description": "Dokładna ocena sytuacji",
+            "text": "Przeprowadzam szczegółową analizę Twojej dokumentacji, umów i sytuacji prawnej. Identyfikuję potencjalne ryzyka oraz wskazuję najlepsze rozwiązania, abyś mógł podejmować świadome decyzje."
+        },
+        {
+            "image": "cooperation/actions.svg",
+            "title": "Działania prawne",
+            "description": "Profesjonalna obsługa",
+            "text": "Przygotowuję niezbędne dokumenty, pisma oraz reprezentuję Cię w kontaktach z drugą stroną lub w sądzie. Działam skutecznie mając na celu jak najkorzystniejsze dla Ciebie rozstrzygnięcia."
+        },
+        {
+            "image": "cooperation/consulting.svg",
+            "title": "Stałe wsparcie na kadym etapie",
+            "description": "Profesjonalna obsługa",
+            "text": "Oferuję stałą współpracę. Jestem z Tobą na każdym kroku, służąc radą i wsparciem."
+        }
+    ]
+}
