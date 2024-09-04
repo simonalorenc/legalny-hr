@@ -5,11 +5,12 @@ import { OfferComponent } from './offer/offer.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { CooperationComponent } from './cooperation/cooperation.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, OfferComponent, AboutMeComponent, CooperationComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent,HomeComponent, OfferComponent, AboutMeComponent, CooperationComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
