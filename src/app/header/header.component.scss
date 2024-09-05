@@ -1,30 +1,43 @@
 .navbar {
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    z-index: 1;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  z-index: 1030;
 }
 
 .container-fluid {
-    height: 100%;
+  height: 100%;
+}
+
+.logo-container {
+  z-index: 1;
 }
 
 .logo {
-    height: 27px;
-    z-index: 1;
+  height: 27px;
 }
 
 .icon {
-    transform: scale(1.1);
-    z-index: 1;
+  transform: scale(1.1);
+  z-index: 1;
 }
 
 .nav-list {
-    position: absolute;
-    background-color: black;
-    width: 100%;
+  position: absolute;
+  background-color: black;
+  width: 100%;
 }
 
 .pointer {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.dim-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
 }
