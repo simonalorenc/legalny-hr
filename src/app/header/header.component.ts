@@ -24,15 +24,15 @@ import { RouterModule } from '@angular/router';
     trigger('transparentBackground', [
       state('true', style({ backgroundColor: 'transparent' })),
       state('false', style({ backgroundColor: '#000000' })),
-      transition('* <=> *', animate(350)),
+      transition('* <=> *', [animate('300ms ease-in-out')]),
     ]),
   ],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   private TRANSPARENT_SCROLL_OFFSET: number = 40;
   isCollapsed: boolean = true;
   isTransparent: boolean = true;
-  toggleIcon: string = "header/menu.svg";
+  toggleIcon: string = 'header/menu.svg';
 
   constructor(private viewportScroller: ViewportScroller) {}
 
@@ -42,14 +42,9 @@ export class HeaderComponent implements OnInit {
     this.isTransparent = this.isTransparentScrollOffset();
   }
 
-  ngOnInit(): void {
-    
-  }
-
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
-    this.toggleIcon = this.isCollapsed ? "header/menu.svg" : "header/close.svg";
-    this.isTransparent = this.isCollapsed && this.isTransparentScrollOffset();
+    this.toggleIcon = this.isCollapsed ? 'header/menu.svg' : 'header/close.svg';
   }
 
   private isTransparentScrollOffset(): boolean {
