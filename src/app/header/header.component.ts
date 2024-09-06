@@ -42,6 +42,13 @@ export class HeaderComponent {
     this.isTransparent = this.isTransparentScrollOffset();
   }
 
+  @HostListener('window:resize', ['$event'])
+  private onResize(event: Event): void {
+    if (window.innerWidth > 992 && !this.isCollapsed) {
+      this.toggleCollapse();
+    }
+  }
+
   toggleCollapse() {
     this.isCollapsed = !this.isCollapsed;
     this.toggleIcon = this.isCollapsed ? 'header/menu.svg' : 'header/close.svg';
