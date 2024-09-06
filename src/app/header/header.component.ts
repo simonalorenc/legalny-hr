@@ -8,7 +8,6 @@ import {
   transition,
 } from '@angular/animations';
 import { RouterModule } from '@angular/router';
-import { HeaderRoutingService } from '../header-routing.service';
 
 @Component({
   selector: 'app-header',
@@ -35,7 +34,7 @@ export class HeaderComponent implements OnInit {
   isTransparent: boolean = true;
   toggleIcon: string = "header/menu.svg";
 
-  constructor(private viewportScroller: ViewportScroller, private headerRoutingService: HeaderRoutingService) {}
+  constructor(private viewportScroller: ViewportScroller) {}
 
   @HostListener('window: scroll', ['$event'])
   private onScroll(event: Event): void {
@@ -57,8 +56,10 @@ export class HeaderComponent implements OnInit {
     return window.scrollY < this.TRANSPARENT_SCROLL_OFFSET;
   }
 
-  onClickOffer() {
-    this.headerRoutingService.onClickOffer();
-    this.viewportScroller.scrollToAnchor('');
+  scrollTo(anchor: string): void {
+    this.viewportScroller.scrollToAnchor(anchor);
+    if (!this.isCollapsed) {
+      this.toggleCollapse();
+    }
   }
 }
