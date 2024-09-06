@@ -18,10 +18,30 @@
   z-index: 1;
 }
 
-.nav-list {
+.menu-container {
+  display: none;
+}
+
+.nav-item:hover {
+  color: rgb(197, 197, 197);
+  transition: color 0.2s ease-in-out;
+}
+
+.collapsed {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.no-collapsed {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
   position: absolute;
   background-color: black;
   width: 100%;
+  padding: 60px 30px 30px 30px;
+  gap: 30px;
 }
 
 .dim-background {

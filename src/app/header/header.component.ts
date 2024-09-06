@@ -1,5 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import {
   trigger,
   state,
@@ -8,6 +8,7 @@ import {
   transition,
 } from '@angular/animations';
 import { RouterModule } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -17,9 +18,9 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.component.scss',
   animations: [
     trigger('slideToggle', [
-      state('void', style({ height: '0', opacity: 0, overflow: 'hidden' })),
+      state('void', style({ height: '0', opacity: 0 })),
       state('*', style({ height: '*', opacity: 1 })),
-      transition('* <=> *', [animate('300ms ease-in-out')]),
+      transition('void <=> *', [animate('300ms ease-in-out')]),
     ]),
     trigger('transparentBackground', [
       state('true', style({ backgroundColor: 'transparent' })),
@@ -32,9 +33,16 @@ export class HeaderComponent {
   private TRANSPARENT_SCROLL_OFFSET: number = 40;
   isCollapsed: boolean = true;
   isTransparent: boolean = true;
+  isScreenLarge: boolean = false;
   toggleIcon: string = 'header/menu.svg';
 
-  constructor(private viewportScroller: ViewportScroller) {}
+  constructor(private viewportScroller: ViewportScroller, @Inject(PLATFORM_ID) private platformId: Object) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.checkScreenWidth();
+    }
+  }
 
   @HostListener('window: scroll', ['$event'])
   private onScroll(event: Event): void {
@@ -44,12 +52,19 @@ export class HeaderComponent {
 
   @HostListener('window:resize', ['$event'])
   private onResize(event: Event): void {
+    this.checkScreenWidth();
     if (window.innerWidth > 992 && !this.isCollapsed) {
       this.toggleCollapse();
     }
   }
 
+  private checkScreenWidth(): void {
+    this.isScreenLarge = window.innerWidth > 992; 
+    console.log(this.isScreenLarge)
+  }
+
   toggleCollapse() {
+    console.log(this.isCollapsed)
     this.isCollapsed = !this.isCollapsed;
     this.toggleIcon = this.isCollapsed ? 'header/menu.svg' : 'header/close.svg';
   }
