@@ -1,16 +1,16 @@
 <nav class="navbar" [@transparentBackground]="isTransparent ? 'true' : 'false'">
   <div class="container-fluid g-0 d-flex justify-content-between caption">
     <div class="logo-container">
-      <img src="header/logo.svg" class="p-3 logo pointer" alt="logo" (click)="scrollTo('home-section')" />
+      <img src="header/logo.svg" class="p-3 logo pointer" alt="logo" (click)="onClickHome()"/>
     </div>
     <div class="d-flex d-lg-none p-3 pointer" (click)="toggleCollapse()">
       <img src="{{ toggleIcon }}" class="icon" alt="menu" />
     </div>
     <div class="menu-container" [ngClass]="{'collapsed': isScreenLarge && isCollapsed,'no-collapsed': !isScreenLarge && !isCollapsed}" @slideToggle>
-      <a class="mx-4 pointer nav-item" (click)="scrollTo('offer-section')">Usługi</a>
-      <a class="mx-4 pointer nav-item" (click)="scrollTo('about-me-section')">O mnie</a>
-      <a class="mx-4 pointer nav-item" (click)="scrollTo('cooperation-section')">Współpraca</a>
-      <a class="mx-4 pointer nav-item" (click)="scrollTo('footer-section')">Kontakt</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('offer-section')">Usługi</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('about-me-section')">O mnie</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('cooperation-section')">Współpraca</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('footer-section')">Kontakt</a>
     </div>
   </div>
 </nav>

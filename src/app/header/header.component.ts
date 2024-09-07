@@ -9,6 +9,7 @@ import {
 } from '@angular/animations';
 import { RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -36,7 +37,7 @@ export class HeaderComponent {
   isScreenLarge: boolean = false;
   toggleIcon: string = 'header/menu.svg';
 
-  constructor(private viewportScroller: ViewportScroller, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private viewportScroller: ViewportScroller,private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -78,5 +79,14 @@ export class HeaderComponent {
     if (!this.isCollapsed) {
       this.toggleCollapse();
     }
+  }
+
+  onClickHome() {
+    this.router.navigate([''])
+  }
+
+  onClickHomeAndScrollTo(anchor: string) {
+    this.router.navigate(['']);
+    this.scrollTo(anchor)
   }
 }

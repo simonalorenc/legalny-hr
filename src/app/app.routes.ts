@@ -10,7 +10,6 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 export const routes: Routes = [
     { path: '', component: MainPageComponent, pathMatch: 'full' },
-    { path: AppRoutes.Home, component: HomeComponent },
     { path: AppRoutes.Offer, component: OfferComponent },
     { path: AppRoutes.AboutMe, component: AboutMeComponent },
     { path: AppRoutes.Cooperation, component: CooperationComponent },
