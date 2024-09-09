@@ -1,3 +1,10 @@
-p {
+@use "../../styles/global" as global;
+
+.container-fluid {
+    background-color: global.$background-light;
     color: black;
+}
+
+.privacy-policy {
+    padding-top: 50px;
 }

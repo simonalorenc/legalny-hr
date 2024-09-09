@@ -39,6 +39,7 @@ import { AppRoutes } from '../app-routes.enum';
 })
 export class HeaderComponent {
   private TRANSPARENT_SCROLL_OFFSET: number = 40;
+  private HEADER_OFFSET: number = 40;
   isCollapsed: boolean = true;
   isTransparent: boolean = true;
   isScreenLarge: boolean = false;
@@ -101,10 +102,16 @@ export class HeaderComponent {
     this.router.navigate(['/main', anchor]).then(() => {
       setTimeout(() => {
         const element = document.querySelector(`#${anchor}`);
-        console.log(anchor)
-        console.log(element)
+        console.log(anchor);
+        console.log(element);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - this.HEADER_OFFSET;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
+          this.toggleCollapse();
         }
       }, 100);
     });
