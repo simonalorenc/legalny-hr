@@ -7,10 +7,10 @@
       <img src="{{ toggleIcon }}" class="icon" alt="menu" />
     </div>
     <div class="menu-container" [ngClass]="{'collapsed': isScreenLarge && isCollapsed,'no-collapsed': !isScreenLarge && !isCollapsed}" @slideToggle>
-      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('offer-section')">Usługi</a>
-      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('about-me-section')">O mnie</a>
-      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('cooperation-section')">Współpraca</a>
-      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo('footer-section')">Kontakt</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo(routes.Offer)">Usługi</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo(routes.AboutMe)">O mnie</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo(routes.Cooperation)">Współpraca</a>
+      <a class="mx-4 pointer nav-item" (click)="onClickHomeAndScrollTo(routes.Footer)">Kontakt</a>
     </div>
   </div>
 </nav>

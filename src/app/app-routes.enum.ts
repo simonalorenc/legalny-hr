@@ -1,5 +1,5 @@
 export enum AppRoutes {
-    Main = 'legalnyhr',
+    Home = 'legalnyhr',
     Offer = 'uslugi',
     AboutMe = 'o-mnie',
     Cooperation = 'wspolpraca',

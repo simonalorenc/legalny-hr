@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import cooperationJson from '../cooperation/data/cooperation.json';
 import { CooperationItem } from './data/cooperation-item';
+import { AppRoutes } from '../app-routes.enum';
 
 @Component({
   selector: 'app-cooperation',
@@ -11,4 +12,5 @@ import { CooperationItem } from './data/cooperation-item';
 })
 export class CooperationComponent {
   cooperationItems: CooperationItem[] = cooperationJson.cooperation;
+  public routes = AppRoutes;
 }

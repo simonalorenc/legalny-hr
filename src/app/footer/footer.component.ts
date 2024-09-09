@@ -10,5 +10,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  AppRoutes = AppRoutes;
+  public routes = AppRoutes;
 }

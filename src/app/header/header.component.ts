@@ -1,5 +1,11 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import {
   trigger,
   state,
@@ -10,6 +16,7 @@ import {
 import { RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import { AppRoutes } from '../app-routes.enum';
 
 @Component({
   selector: 'app-header',
@@ -36,8 +43,13 @@ export class HeaderComponent {
   isTransparent: boolean = true;
   isScreenLarge: boolean = false;
   toggleIcon: string = 'header/menu.svg';
+  public routes = AppRoutes;
 
-  constructor(private viewportScroller: ViewportScroller,private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    private viewportScroller: ViewportScroller,
+    private router: Router,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -60,12 +72,12 @@ export class HeaderComponent {
   }
 
   private checkScreenWidth(): void {
-    this.isScreenLarge = window.innerWidth > 992; 
-    console.log(this.isScreenLarge)
+    this.isScreenLarge = window.innerWidth > 992;
+    console.log(this.isScreenLarge);
   }
 
   toggleCollapse() {
-    console.log(this.isCollapsed)
+    console.log(this.isCollapsed);
     this.isCollapsed = !this.isCollapsed;
     this.toggleIcon = this.isCollapsed ? 'header/menu.svg' : 'header/close.svg';
   }
@@ -82,11 +94,19 @@ export class HeaderComponent {
   }
 
   onClickHome() {
-    this.router.navigate([''])
+    this.router.navigate(['']);
   }
 
   onClickHomeAndScrollTo(anchor: string) {
-    this.router.navigate(['']);
-    this.scrollTo(anchor)
+    this.router.navigate(['/main', anchor]).then(() => {
+      setTimeout(() => {
+        const element = document.querySelector(`#${anchor}`);
+        console.log(anchor)
+        console.log(element)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    });
   }
 }
