@@ -15,5 +15,5 @@ export const routes: Routes = [
     { path: AppRoutes.AboutMe, component: AboutMeComponent },
     { path: AppRoutes.Cooperation, component: CooperationComponent },
     { path: AppRoutes.Footer, component: FooterComponent },
-    { path: 'politka-prywatnosci', component: PrivacyPolicyComponent }
+    { path: 'polityka-prywatnosci', component: PrivacyPolicyComponent }
 ];

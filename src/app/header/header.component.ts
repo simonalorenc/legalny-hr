@@ -13,10 +13,11 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { RouterModule } from '@angular/router';
+import { NavigationEnd, RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { AppRoutes } from '../app-routes.enum';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -42,7 +43,9 @@ export class HeaderComponent {
   private HEADER_OFFSET: number = 40;
   isCollapsed: boolean = true;
   isTransparent: boolean = true;
+  isScrollAnimation: boolean = true;
   isScreenLarge: boolean = false;
+  logoSrc: string = 'header/logo.svg';
   toggleIcon: string = 'header/menu.svg';
   public routes = AppRoutes;
 
@@ -56,11 +59,24 @@ export class HeaderComponent {
     if (isPlatformBrowser(this.platformId)) {
       this.checkScreenWidth();
     }
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const currentUrl = this.router.routerState.snapshot.url;
+        console.log(currentUrl)
+        if (currentUrl.includes('polityka-prywatnosci')) {
+          this.isScrollAnimation = false;
+          this.isTransparent = false;
+        } else {
+          this.isScrollAnimation = true;
+        }
+      });
   }
 
   @HostListener('window: scroll', ['$event'])
   private onScroll(event: Event): void {
     if (!this.isCollapsed) return;
+    if (!this.isScrollAnimation) return;
     this.isTransparent = this.isTransparentScrollOffset();
   }
 
@@ -74,11 +90,9 @@ export class HeaderComponent {
 
   private checkScreenWidth(): void {
     this.isScreenLarge = window.innerWidth > 992;
-    console.log(this.isScreenLarge);
   }
 
   toggleCollapse() {
-    console.log(this.isCollapsed);
     this.isCollapsed = !this.isCollapsed;
     this.toggleIcon = this.isCollapsed ? 'header/menu.svg' : 'header/close.svg';
   }
@@ -102,16 +116,18 @@ export class HeaderComponent {
     this.router.navigate(['/main', anchor]).then(() => {
       setTimeout(() => {
         const element = document.querySelector(`#${anchor}`);
-        console.log(anchor);
-        console.log(element);
         if (element) {
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          this.checkScreenWidth();
+          if (!this.isScreenLarge) {
+            this.toggleCollapse();
+          }
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
           const offsetPosition = elementPosition - this.HEADER_OFFSET;
           window.scrollTo({
             top: offsetPosition,
             behavior: 'smooth',
           });
-          this.toggleCollapse();
         }
       }, 100);
     });
