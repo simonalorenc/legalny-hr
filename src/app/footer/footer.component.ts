@@ -10,5 +10,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+  mailToLink: string = 'mailto:kancelaria@legalnyhr.pl?subject=temat&body=treść';
   public routes = AppRoutes;
 }
