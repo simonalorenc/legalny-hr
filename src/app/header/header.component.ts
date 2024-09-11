@@ -3,7 +3,6 @@ import {
   Component,
   HostListener,
   Inject,
-  OnInit,
   PLATFORM_ID,
 } from '@angular/core';
 import {
