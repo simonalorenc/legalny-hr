@@ -12,5 +12,5 @@ import { AppRoutes } from '../app-routes.enum';
 })
 export class CooperationComponent {
   cooperationItems: CooperationItem[] = cooperationJson.cooperation;
-  rootPath = AppRoutes.Cooperation;
+  routePath = AppRoutes.Cooperation;
 }
