@@ -47,7 +47,7 @@ export class HeaderComponent {
   isScreenLarge: boolean = false;
   logoSrc: string = 'header/logo.svg';
   toggleIcon: string = 'header/menu.svg';
-  public routes = AppRoutes;
+  routes = AppRoutes;
 
   constructor(
     private viewportScroller: ViewportScroller,

@@ -10,7 +10,6 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 export const routes: Routes = [
     { path: '', component: MainPageComponent, pathMatch: 'full' },
-    { path: 'legalnyhr', component: MainPageComponent },
     { path: 'legalnyhr/:section', component: MainPageComponent },
     { path: AppRoutes.Offer, component: OfferComponent },
     { path: AppRoutes.AboutMe, component: AboutMeComponent },

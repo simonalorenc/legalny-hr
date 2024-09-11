@@ -11,5 +11,6 @@ import { RouterModule } from '@angular/router';
 })
 export class FooterComponent {
   mailToLink: string = 'mailto:kancelaria@legalnyhr.pl?subject=temat&body=treść';
-  public routes = AppRoutes;
+  public rootPath = AppRoutes.Footer;
+  public privacyPolicyPath = AppRoutes.PrivacyPolicy;
 }

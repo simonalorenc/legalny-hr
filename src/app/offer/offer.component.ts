@@ -13,5 +13,5 @@ import { AppRoutes } from '../app-routes.enum';
 export class OfferComponent {
   employerOffers: OfferItem[] = offersJson.employer;
   employeeOffers: OfferItem[] = offersJson.employee;
-  public routes = AppRoutes;
+  public rootPath = AppRoutes.Offer;
 }

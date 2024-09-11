@@ -9,5 +9,5 @@ import { AppRoutes } from '../app-routes.enum';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-  public routes = AppRoutes;
+  public rootPath = AppRoutes.AboutMe;
 }
