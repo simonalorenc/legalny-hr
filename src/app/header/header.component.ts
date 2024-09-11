@@ -69,6 +69,7 @@ export class HeaderComponent {
           this.isTransparent = false;
         } else {
           this.isScrollAnimation = true;
+          this.isTransparent = true;
         }
       });
   }
@@ -109,11 +110,11 @@ export class HeaderComponent {
   }
 
   onClickHome() {
-    this.router.navigate(['']);
+    this.router.navigate(['legalnyhr']);
   }
 
   onClickHomeAndScrollTo(anchor: string) {
-    this.router.navigate(['/main', anchor]).then(() => {
+    this.router.navigate(['/legalnyhr', anchor]).then(() => {
       setTimeout(() => {
         const element = document.querySelector(`#${anchor}`);
         if (element) {

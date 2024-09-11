@@ -3,6 +3,7 @@
 .container-fluid {
   background-color: global.$background-light;
   color: global.$text-dark;
+  position: relative;
 }
 
 .title-large {
@@ -21,3 +22,11 @@
 .offer-item:last-child {
   padding: 0;
 }
+
+// .gradient {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: 30px;
+//   background: linear-gradient(360deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 100%);
+// }

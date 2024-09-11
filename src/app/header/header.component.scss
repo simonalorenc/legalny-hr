@@ -25,6 +25,14 @@
   width: 100%;
 }
 
+a {
+  transition: color ease-in-out 0.3s;
+}
+
+a:hover {
+  color: rgb(196, 196, 196);
+}
+
 .dim-background {
   position: fixed;
   width: 100%;

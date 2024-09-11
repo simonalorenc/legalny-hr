@@ -10,10 +10,10 @@ import { MainPageComponent } from './main-page/main-page.component';
 
 export const routes: Routes = [
     { path: '', component: MainPageComponent, pathMatch: 'full' },
-    { path: 'main/:section', component: MainPageComponent },
+    { path: 'legalnyhr/:section', component: MainPageComponent },
     { path: AppRoutes.Offer, component: OfferComponent },
     { path: AppRoutes.AboutMe, component: AboutMeComponent },
     { path: AppRoutes.Cooperation, component: CooperationComponent },
     { path: AppRoutes.Footer, component: FooterComponent },
-    { path: 'polityka-prywatnosci', component: PrivacyPolicyComponent }
+    { path: AppRoutes.PrivacyPolicy, component: PrivacyPolicyComponent }
 ];
