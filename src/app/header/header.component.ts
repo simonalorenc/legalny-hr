@@ -110,12 +110,12 @@ export class HeaderComponent {
   }
 
   onClickHome() {
-    this.router.navigate(['legalnyhr']);
+    this.router.navigate(['']);
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });  
   }
 
   onClickHomeAndScrollTo(anchor: string) {
-    this.router.navigate(['/legalnyhr', anchor]).then(() => {
+    this.router.navigate(['/home', anchor]).then(() => {
       setTimeout(() => {
         const element = document.querySelector(`#${anchor}`);
         if (element) {
