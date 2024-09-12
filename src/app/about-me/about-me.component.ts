@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppRoutes } from '../app-routes.enum';
+import { AppSections } from '../app-routes.enum';
 
 @Component({
   selector: 'app-about-me',
@@ -9,5 +9,5 @@ import { AppRoutes } from '../app-routes.enum';
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent {
-  routePath = AppRoutes.AboutMe;
+  sectionName = AppSections.AboutMe;
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AppRoutes } from '../app-routes.enum';
+import { AppRoutes, AppSections } from '../app-routes.enum';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,6 +11,6 @@ import { RouterModule } from '@angular/router';
 })
 export class FooterComponent {
   mailToLink: string = 'mailto:kancelaria@legalnyhr.pl';
-  routePath = AppRoutes.Footer;
+  sectionName = AppSections.Footer;
   privacyPolicyPath = AppRoutes.PrivacyPolicy;
 }

@@ -9,11 +9,6 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { MainPageComponent } from './main-page/main-page.component';
 
 export const routes: Routes = [
-    { path: '', component: MainPageComponent, pathMatch: 'full' },
-    { path: 'home/:section', component: MainPageComponent },
-    { path: AppRoutes.Offer, component: OfferComponent },
-    { path: AppRoutes.AboutMe, component: AboutMeComponent },
-    { path: AppRoutes.Cooperation, component: CooperationComponent },
-    { path: AppRoutes.Footer, component: FooterComponent },
-    { path: AppRoutes.PrivacyPolicy, component: PrivacyPolicyComponent }
+  { path: AppRoutes.Main, component: MainPageComponent },
+  { path: AppRoutes.PrivacyPolicy, component: PrivacyPolicyComponent },
 ];

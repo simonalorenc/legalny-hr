@@ -1,10 +1,5 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
-import {
-  Component,
-  HostListener,
-  Inject,
-  PLATFORM_ID,
-} from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import {
   trigger,
   state,
@@ -12,11 +7,9 @@ import {
   animate,
   transition,
 } from '@angular/animations';
-import { NavigationEnd, RouterModule } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
+import { NavigationEnd, RouterModule, Scroll } from '@angular/router';
 import { Router } from '@angular/router';
-import { AppRoutes } from '../app-routes.enum';
-import { filter } from 'rxjs';
+import { AppRoutes, AppSections } from '../app-routes.enum';
 
 @Component({
   selector: 'app-header',
@@ -38,39 +31,48 @@ import { filter } from 'rxjs';
   ],
 })
 export class HeaderComponent {
-  private TRANSPARENT_SCROLL_OFFSET: number = 40;
-  private HEADER_OFFSET: number = 40;
+  private TRANSPARENT_SCROLL_OFFSET: number = 50;
+  private HEADER_OFFSET: number = 50;
   isCollapsed: boolean = true;
   isTransparent: boolean = true;
   isScrollAnimation: boolean = true;
   isScreenLarge: boolean = false;
-  logoSrc: string = 'header/logo.svg';
   toggleIcon: string = 'header/menu.svg';
   routes = AppRoutes;
 
   constructor(
     private viewportScroller: ViewportScroller,
-    private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+    private router: Router
+  ) {
+    viewportScroller.setOffset([0, this.HEADER_OFFSET]);
+    router.events.subscribe((event) => {
+      if (event instanceof Scroll) {
+        this.handleScrollEvent(event);
+      } else if (event instanceof NavigationEnd) {
+        this.handleNavigationEndEvent(event);
+      }
+    });
+  }
 
-  ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.checkScreenWidth();
-    }
-    this.router.events
-      .pipe(filter((event) => event instanceof NavigationEnd))
-      .subscribe(() => {
-        const currentUrl = this.router.routerState.snapshot.url;
-        console.log(currentUrl)
-        if (currentUrl.includes('polityka-prywatnosci')) {
-          this.isScrollAnimation = false;
-          this.isTransparent = false;
-        } else {
-          this.isScrollAnimation = true;
-          this.isTransparent = true;
-        }
+  private handleScrollEvent(event: Scroll) {
+    if (event.anchor) {
+      setTimeout(() => {
+        this.viewportScroller.scrollToAnchor(event.anchor!);
       });
+    } else if (event.position) {
+      this.viewportScroller.scrollToPosition(event.position);
+    } else {
+      this.viewportScroller.scrollToPosition([0, 0]);
+    }
+  }
+
+  private handleNavigationEndEvent(event: NavigationEnd) {
+    const currentUrl = this.router.routerState.snapshot.url;
+    const isPrivacyPolicyComponent = currentUrl.includes(
+      AppRoutes.PrivacyPolicy
+    );
+    this.isScrollAnimation = !isPrivacyPolicyComponent;
+    this.isTransparent = !isPrivacyPolicyComponent;
   }
 
   @HostListener('window: scroll', ['$event'])
@@ -101,36 +103,26 @@ export class HeaderComponent {
     return window.scrollY < this.TRANSPARENT_SCROLL_OFFSET;
   }
 
-  scrollTo(anchor: string): void {
-    this.viewportScroller.scrollToAnchor(anchor);
+  onClickOffer() {
+    this.navigateToMain(AppSections.Offer);
+  }
+
+  onClickAboutMe() {
+    this.navigateToMain(AppSections.AboutMe);
+  }
+
+  onClickCooperation() {
+    this.navigateToMain(AppSections.Cooperation);
+  }
+
+  onClickFooter() {
+    this.navigateToMain(AppSections.Footer);
+  }
+
+  private navigateToMain(fragment: string) {
+    this.router.navigate([AppRoutes.Main], { fragment: fragment });
     if (!this.isCollapsed) {
       this.toggleCollapse();
     }
-  }
-
-  onClickHome() {
-    this.router.navigate(['']);
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });  
-  }
-
-  onClickHomeAndScrollTo(anchor: string) {
-    this.router.navigate(['/home', anchor]).then(() => {
-      setTimeout(() => {
-        const element = document.querySelector(`#${anchor}`);
-        if (element) {
-          this.checkScreenWidth();
-          if (!this.isScreenLarge) {
-            this.toggleCollapse();
-          }
-          const elementPosition =
-            element.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - this.HEADER_OFFSET;
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth',
-          });
-        }
-      }, 100);
-    });
   }
 }

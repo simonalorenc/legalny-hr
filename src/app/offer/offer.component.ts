@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OfferItem } from './data/offer-item';
 import offersJson from '../offer/data/offers.json';
-import { AppRoutes } from '../app-routes.enum';
+import { AppSections } from '../app-routes.enum';
 
 @Component({
   selector: 'app-offer',
@@ -13,5 +13,5 @@ import { AppRoutes } from '../app-routes.enum';
 export class OfferComponent {
   employerOffers: OfferItem[] = offersJson.employer;
   employeeOffers: OfferItem[] = offersJson.employee;
-  routePath = AppRoutes.Offer;
+  sectionName = AppSections.Offer;
 }
