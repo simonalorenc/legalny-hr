@@ -1,4 +1,4 @@
-<div id="footer-section" class="container-fluid g-0">
+<div [id]="sectionName" class="container-fluid g-0">
   <div class="container g-0">
     <div class="row g-0 py-5 px-5 px-md-0 d-flex justify-content-between text-center">
       <div class="col-12 col-md-5">
@@ -27,12 +27,14 @@
     <div class="container-border p-5 mx-5 mx-md-0">
       <div class="row d-flex justify-content-between">
         <div class="col-5 col-md-4">
-          <div class="subtitle">Kontakt</div>
-          <div class="pt-3 pb-2">kancelaria&#64;legalnyhr.pl</div>
-          <div>+48 518 272 333</div>
+          <div class="subtitle pb-3">Kontakt</div>
+          <div class="d-flex flex-column">
+            <a [href]="mailToLink">kancelaria&#64;legalnyhr.pl</a>
+            <a class="pt-2" [href]="'tel:+48518272333'">+48 518 272 333</a>
+          </div>
         </div>
         <div class="col-5 col-md-4 d-flex flex-column align-items-end">
-          Polityka prywatności
+          <a [routerLink]="[privacyPolicyPath]">Polityka prywatności</a>
         </div>
       </div>
       <div class="copyright-space"></div>

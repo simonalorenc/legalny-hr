@@ -1,26 +1,30 @@
 <nav class="navbar" [@transparentBackground]="isTransparent ? 'true' : 'false'">
   <div class="container-fluid g-0 d-flex justify-content-between caption">
     <div class="logo-container">
-      <img src="header/logo.svg" class="p-3 logo pointer" alt="logo" (click)="scrollTo('home-section')" />
+      <img
+        src="header/logo.svg"
+        class="p-3 logo pointer"
+        alt="logo"
+        [routerLink]="routes.Main"
+      />
     </div>
     <div class="d-flex d-lg-none p-3 pointer" (click)="toggleCollapse()">
       <img src="{{ toggleIcon }}" class="icon" alt="menu" />
     </div>
     <div class="d-none d-lg-flex align-items-center mx-4">
-      <a class="mx-4 pointer" (click)="scrollTo('offer-section')">Usługi</a>
-      <a class="mx-4 pointer" (click)="scrollTo('about-me-section')">O mnie</a>
-      <a class="mx-4 pointer" (click)="scrollTo('cooperation-section')">Współpraca</a>
-      <a class="mx-4 pointer" (click)="scrollTo('footer-section')">Kontakt</a>
+      <a class="mx-4 pointer" (click)="onClickOffer()">Usługi</a>
+      <a class="mx-4 pointer" (click)="onClickAboutMe()">O mnie</a>
+      <a class="mx-4 pointer" (click)="onClickCooperation()">Współpraca</a>
+      <a class="mx-4 pointer" (click)="onClickFooter()">Kontakt</a>
     </div>
     <div *ngIf="!isCollapsed" class="me-4 pt-5 nav-list" @slideToggle>
       <div class="d-flex flex-column">
-        <a class="mx-4 mt-5 pointer" (click)="scrollTo('offer-section')">Usługi</a>
-        <a class="mx-4 mt-5 pointer" (click)="scrollTo('about-me-section')">O mnie</a>
-        <a class="mx-4 mt-5 pointer" (click)="scrollTo('cooperation-section')">Współpraca</a>
-        <a class="mx-4 my-5 pointer" (click)="scrollTo('footer-section')">Kontakt</a>
+        <a class="mx-4 mt-5 pointer" (click)="onClickOffer()">Usługi</a>
+        <a class="mx-4 mt-5 pointer" (click)="onClickAboutMe()">O mnie</a>
+        <a class="mx-4 mt-5 pointer" (click)="onClickCooperation()">Współpraca</a>
+        <a class="mx-4 my-5 pointer" (click)="onClickFooter()">Kontakt</a>
       </div>
     </div>
   </div>
 </nav>
-
 <div [class.dim-background]="!isCollapsed"></div>
