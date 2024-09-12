@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import cooperationJson from '../cooperation/data/cooperation.json';
 import { CooperationItem } from './data/cooperation-item';
-import { AppRoutes, AppSections } from '../app-routes.enum';
+import { AppSections } from '../app-routes.enum';
 
 @Component({
   selector: 'app-cooperation',
