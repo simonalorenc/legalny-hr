@@ -54,6 +54,21 @@ export class HeaderComponent {
     });
   }
 
+  @HostListener('window: scroll', ['$event'])
+  private onScroll(event: Event): void {
+    if (!this.isCollapsed) return;
+    if (!this.isScrollAnimation) return;
+    this.isTransparent = this.isTransparentScrollOffset();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  private onResize(event: Event): void {
+    this.checkScreenWidth();
+    if (window.innerWidth > 992 && !this.isCollapsed) {
+      this.toggleCollapse();
+    }
+  }
+
   private handleScrollEvent(event: Scroll) {
     if (event.anchor) {
       setTimeout(() => {
@@ -69,25 +84,10 @@ export class HeaderComponent {
   private handleNavigationEndEvent(event: NavigationEnd) {
     const currentUrl = this.router.routerState.snapshot.url;
     const isPrivacyPolicyComponent = currentUrl.includes(
-      AppRoutes.PrivacyPolicy
+      AppRoutes.PrivacyPolicy 
     );
     this.isScrollAnimation = !isPrivacyPolicyComponent;
     this.isTransparent = !isPrivacyPolicyComponent;
-  }
-
-  @HostListener('window: scroll', ['$event'])
-  private onScroll(event: Event): void {
-    if (!this.isCollapsed) return;
-    if (!this.isScrollAnimation) return;
-    this.isTransparent = this.isTransparentScrollOffset();
-  }
-
-  @HostListener('window:resize', ['$event'])
-  private onResize(event: Event): void {
-    this.checkScreenWidth();
-    if (window.innerWidth > 992 && !this.isCollapsed) {
-      this.toggleCollapse();
-    }
   }
 
   private checkScreenWidth(): void {
