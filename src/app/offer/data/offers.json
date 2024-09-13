@@ -1,0 +1,54 @@
+{
+    "employer": [
+        {
+            "title": "Tworzenie dokumentacji zatrudnieniowej",
+            "text": "Kompleksowe przygotowanie umów o pracę, umów cywilnoprawnych, regulaminów oraz polityk zgodnych z przepisami regulującymi zatrudnienie."
+        },
+        {
+            "title": "Analiza dokumentacji",
+            "text": "Przegląd istniejących dokumentów w Twojej firmie pod kątem zgodności z przepisami, minimalizując ryzyko prawne."
+        },
+        {
+            "title": "Obsługa zakończenia stosunku zatrudnienia",
+            "text": "Sporządzanie pism związanych z wypowiedzeniem, rozwiązywaniem umów oraz doradztwo w sytuacjach trudnych związanych z zakończeniem współpracy."
+        },
+        {
+            "title": "Reprezentacja w sporach sądowych",
+            "text": "Profesjonalna obrona Twoich interesów przed sądami, w tym przygotowywanie strategii obrony procesowej."
+        },
+        {
+            "title": "Negocjacje i mediacje",
+            "text": "Prowadzenie rozmów i mediacji w przypadku konfliktów pracowniczych, dążąc do jak najszybszego ich rozwiązania."
+        },
+        {
+            "title": "Konsultacje i szkolenia hr",
+            "text": "Dedykowane konsultacje szkolenia dla działów HR, które zwiększą ich kompetencje w obszarze prawa pracy i zarządzania ryzykiem prawnym."
+        }
+    ],
+    "employee": [
+        {
+            "title": "Weryfikacja umów zatrudnieniowych",
+            "text": "Sprawdzenie, czy Twoja umowa jest zgodna z obowiązującym prawem, chroni w odpowiedni sposób Twoje interesy oraz doradztwo w zakresie jej negocjacji."
+        },
+        {
+            "title": "Pomoc w sporach z pracodawcą",
+            "text": "Reprezentacja w konfliktach dotyczących zatrudnienia i egzekwowania twoich praw."
+        },
+        {
+            "title": "Doradztwo w zakresie zakończenia zatrudnienia",
+            "text": "Pomoc w negocjacjach przy zwolnieniach, przygotowanie pism oraz analiza propozycji ze strony pracodawcy."
+        },
+        {
+            "title": "Wsparcie w odzyskaniu nalenych świadczeń",
+            "text": "Doradztwo i reprezentacja w przypadku niewypłaconych wynagrodzeń, urlopów czy innych świadczeń."
+        },
+        {
+            "title": "Ochrona praw w trakcie zatrudnienia",
+            "text": "Monitorowanie Twoich praw w trakcie trwania zatrudnienia, abyś miał pewność, że są one przestrzegane."
+        },
+        {
+            "title": "Przygotowanie do rozmów z pracodawcą",
+            "text": "Profesjonalne doradztwo przed rozmowami o podwyżkę, awans czy zmianę warunków pracy."
+        }
+    ]
+}

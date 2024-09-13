@@ -1,0 +1,44 @@
+<div [id]="sectionName" class="container-fluid g-0">
+  <div class="container g-0">
+    <div class="row g-0 py-5 px-5 px-md-0 d-flex justify-content-between text-center">
+      <div class="col-12 col-md-5">
+        <div class="mx-5 subtitle">
+          Uprzedź sytuację i bądź gotów bronić swoich praw!
+        </div>
+        <div class="pt-2 pt-md-4 caption">
+          Dzięki mojemu wsparciu możesz skoncentrować się na prowadzeniu firmy
+          lub rozwijaniu kariery, nie martwiąc się o kwestie prawne.
+        </div>
+      </div>
+      <div class="col-12 col-md-5 caption">
+        <div class="pt-5 pt-md-0 mx-5 subtitle">
+          Umów się na konsultacje online!
+        </div>
+        <div class="pt-2 pt-md-4 caption">
+          Zapraszam do skorzystania z możliwości konsultacji online. Wystarczy,
+          że napiszesz maila, podając swoje dane oraz krótko opisując pytanie,
+          zagadnienie prawne lub problem.<br />Po otrzymaniu wiadomości,
+          skontaktuję się z Tobą w celu umówienia terminu spotkania oraz
+          ustalenia szczegółów.<br />Po uiszczeniu opłaty, spotkamy się na
+          konsultacji online, gdzie poznasz dalsze warunki współpracy.
+        </div>
+      </div>
+    </div>
+    <div class="container-border p-5 mx-5 mx-md-0">
+      <div class="row d-flex justify-content-between">
+        <div class="col-5 col-md-4">
+          <div class="subtitle pb-3">Kontakt</div>
+          <div class="d-flex flex-column">
+            <a [href]="mailToLink">kancelaria&#64;legalnyhr.pl</a>
+            <a class="pt-2" [href]="'tel:+48518272333'">+48 518 272 333</a>
+          </div>
+        </div>
+        <div class="col-5 col-md-4 d-flex flex-column align-items-end">
+          <a [routerLink]="[privacyPolicyPath]">Polityka prywatności</a>
+        </div>
+      </div>
+      <div class="copyright-space"></div>
+      <div>&copy;2024 Kancelaria Radcy Prawnego Angelika Czarnecka</div>
+    </div>
+  </div>
+</div>
