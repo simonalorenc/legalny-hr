@@ -1,5 +1,5 @@
 <div class="container-fluid g-0 d-flex justify-content-center video-wrapper">
-  <video autoplay muted loop>
+  <video autoplay muted loop playsinline oncanplay="this.play()" onloadedmetadata="this.muted = true">
     <source src="home/home_video.mp4" type="video/mp4" />
   </video>
   <div class="container d-flex flex-column justify-content-end">
