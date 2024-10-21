@@ -4,8 +4,8 @@ export enum AppRoutes {
 }
 
 export enum AppSections {
-  Offer = 'uslugi',
-  AboutMe = 'o-mnie',
-  Cooperation = 'wspolpraca',
+  Offer = 'pracownik-pracodawca',
+  AboutMe = 'angelika-czarnecka',
+  Cooperation = 'konsultacja',
   Footer = 'kontakt',
 }
